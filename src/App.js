@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+import DataForm from './DataForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        region: { 
+          cName: "", 
+          avgAge: null, 
+          avgDailyIncomeInUSD: null, 
+          avgDailyIncomePopulation: null 
+        }, 
+      periodType: "days", 
+      timeToElapse: 58, 
+      reportedCases: 674, 
+      population: 66622705, 
+      totalHospitalBeds: 1380614 
+      },
+      impact: {},
+      severeImpact: {},
+    };
+  }
+
+
+  render() {
+    return (
+      <div>
+        <h3 className="bg-primary text-white text-center p-2">
+        <img src="./images/covid.jpg" className="img-fluid float-left" alt="covid-19" />
+          Covid-19 Estimator App
+        </h3>
+        <div className="container-fluid">
+          <DataForm />
+        </div>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
