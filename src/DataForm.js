@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DataTable from './DataTable';
 import ImpactTable from './ImpactTable'
 import covid19ImpactEstimator from './estimator';
+import {FaBed, FaCalendarAlt, FaUsers, FaFileAlt, FaClock } from 'react-icons/fa';
+
 
 export default class DataForm extends Component {
   constructor(props) {
@@ -125,7 +127,7 @@ export default class DataForm extends Component {
         <form onSubmit={ this.handleSubmit } >
           <div className="row">
             <div className="my-1 col-sm-4">
-              <label className="p-2">Population:</label>
+              <label className="p-2">Population <FaUsers />:</label>
               <input className="form-control"
                 type="number"
                 value={population}
@@ -134,7 +136,7 @@ export default class DataForm extends Component {
               />
             </div>
             <div className="my-1 col-sm-4">
-              <label className="p-2">Time To Elapse:</label>
+              <label className="p-2">Time To Elapse <FaClock />:</label>
               <input className="form-control"
                 type="number"
                 value={timeToElapse}
@@ -143,7 +145,7 @@ export default class DataForm extends Component {
               />
             </div>
             <div className="my-1 col-sm-4">
-              <label className="p-2">Reported Cases:</label>
+              <label className="p-2">Reported Cases <FaFileAlt />:</label>
               <input className="form-control"
                 type="number"
                 value={reportedCases}
@@ -155,7 +157,7 @@ export default class DataForm extends Component {
           
           <div className="row">
             <div className="my-1 col-sm-6">
-              <label className="p-2">Total Hospital Beds:</label>
+              <label className="p-2">Total Hospital Beds <FaBed color="grey" size="1.5rem"/>:</label>
               <input className="form-control"
                 type="number"
                 value={totalHospitalBeds}
@@ -164,7 +166,7 @@ export default class DataForm extends Component {
               />
             </div>
             <div className="my-1 col-sm-6">
-            <label className="p-2">Period Type:</label>
+            <label className="p-2">Period Type <FaCalendarAlt />:</label>
               <select className="form-control"
                 value={periodType}
                 data-period-type
